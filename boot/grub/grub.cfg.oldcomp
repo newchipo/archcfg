@@ -1,0 +1,29 @@
+# Задаём переменную с местом установки Grub
+set prefix=(hd0,gpt4)/boot/grub
+
+# Загружаем EFI video drivers
+insmod efi_gop
+insmod font
+if loadfont ${prefix}/fonts/unicode.pf2
+then
+	insmod gfxmterm
+	set gfxmode=auto
+	set gfxplayload=keep
+	terminal_output gfxterm
+fi
+
+set timeout=15
+menuentry "Arch Linux (31.03.2022)" {
+	probe -s UUID -u $root
+	linux /boot/vmlinuz-linux root=UUID=$UUID rw
+	initrd /boot/intel-ucode.img /boot/initramfs-linux.img
+}
+
+# Пункт меню номер 1 - Загрузка Windows
+menuentry "Windows 10" {
+        insmod part_msdos
+	insmod ntfs
+	set root='hd1,msdos1'
+#	chainloader (hd1,msdos1)+1
+	chainloader +1
+}
