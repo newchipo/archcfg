@@ -3,7 +3,6 @@ echo = = = = = = = = = = = =
 echo NEWCHIPO\'S BASH SCRIPT
 echo вер. 0.1 от 2024.05.01
 echo = = = = = = = = = = = =
-echo Копируем файлы для русской локализации Arch Linux
+echo Set Russian locale to Arch Linux
 cp --verbose etc/* /etc
-echo И запускаем locale-gen
 locale-gen

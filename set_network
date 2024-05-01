@@ -1,0 +1,10 @@
+#!/bin/bash
+echo = = = = = = = = = = = =
+echo NEWCHIPO\'S BASH SCRIPT
+echo вер. 0.1 от 2024.05.01
+echo = = = = = = = = = = = =
+
+echo Set network and name of computer to Arch Linux
+pacman -S networkmanager
+systemctl enable NetworkManager
+echo VM-ARCH > /etc/hostname
