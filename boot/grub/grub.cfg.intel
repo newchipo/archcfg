@@ -1,0 +1,20 @@
+# Задаём переменную с местом установки Grub
+set prefix=(hd0,gpt4)/boot/grub
+
+# Загружаем EFI video drivers
+insmod efi_gop
+insmod font
+if loadfont ${prefix}/fonts/unicode.pf2
+then
+	insmod gfxmterm
+	set gfxmode=auto
+	set gfxplayload=keep
+	terminal_output gfxterm
+fi
+
+set timeout=6
+menuentry "Arch Linux (01.05.2024)" {
+	probe -s UUID -u $root
+	linux /boot/vmlinuz-linux root=UUID=$UUID rw
+	initrd /boot/intel-ucode.img /boot/initramfs-linux.img
+}

@@ -4,6 +4,5 @@ echo NEWCHIPO\'S BASH SCRIPT
 echo вер. 0.1 от 2024.05.01
 echo = = = = = = = = = = = =
 
-echo Set Russian locale to Arch Linux
-cp --verbose etc/* /etc
-locale-gen
+echo Set grub.cfg with Intel module
+cp --verbose boot/grub/grub.cfg.amd /boot/grub/grub.cfg

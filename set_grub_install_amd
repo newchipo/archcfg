@@ -1,0 +1,12 @@
+#!/bin/bash
+echo = = = = = = = = = = = =
+echo NEWCHIPO\'S BASH SCRIPT
+echo вер. 0.1 от 2024.05.01
+echo = = = = = = = = = = = =
+
+echo Install grub with Intel module
+pacman -S grub efibootmgr amd-ucode
+lsblk -f
+echo
+echo Enter grub-install /dev/disk
+echo where the disk includes /boot/grub section
