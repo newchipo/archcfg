@@ -1,0 +1,3 @@
+#!/bin/bash
+echo Install pipwire
+pacman -Syu pipewire pipewire-alsa pipewire-pulse gst-plugin-pipewire

@@ -1,11 +1,7 @@
 #!/bin/bash
 user="denis"
-GREEN='\033[0;32m'
-RED='\033[0;31m'
-GRAY='\033[0;30m'
-RESET='\033[0m'
 
-echo -e "${GREEN}Setup sudo and add new user${RESET}"
+echo -e "Setup sudo and add new user"
 pacman -S sudo
 EDITOR=nano visudo
 echo Defaults env_reset >> /etc/sudoers
@@ -16,4 +12,5 @@ passwd $user
 
 usermod -aG wheel $user
 
-echo -e "You need uncomment ${GRAY}#%wheel ALL=(ALL:ALL) ALL${RESET} in ${GRAY}/etc/sudoers"${RESET}
+echo "You need uncomment #%wheel ALL=(ALL:ALL) ALL in /etc/sudoers"
+echo "Enter visudo"
