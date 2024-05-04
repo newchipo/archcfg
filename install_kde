@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "Install KDE"
+pacman -Syu plasma-meta
+echo "Install Apps"
+pacman -S okular konsole dolphin ark kate gwenview ksnip spectacle
+pacman -S kdeconnect discover kcalc filelight kfind ksystemlog
+pacman -S khelpcenter kmix kmenuedit
+pacman -S plasma-systemmonitor
+pacman -S skanlite skanpage krita kdenlive songrec darktable

@@ -1,0 +1,5 @@
+#!/bin/bash
+echo "Install Main Apps"
+pacman -Syu obsidian
+pacman -S vivaldi telegram-desktop thunderbird gramps vlc kid3
+pacman -S libreoffice-still libreoffice-still-ru code
